@@ -1,5 +1,7 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using UMS.Application;
 using UMS.Common.Converters;
 using Microsoft.AspNetCore.OData;
@@ -98,6 +100,11 @@ app.UseAuthorization();
 app.UseExceptionHandler();
 
 app.MapControllers();
+
+app.MapHealthChecks("healthz", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.Run();
 
