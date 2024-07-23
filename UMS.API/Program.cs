@@ -1,6 +1,5 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
-using UMS.Infrastructure;
 using UMS.Application;
 using UMS.Common.Converters;
 using Microsoft.AspNetCore.OData;
@@ -10,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using UMS.API.Middlewares;
 using UMS.Domain.Users;
+using UMS.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +19,7 @@ builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 
 
-builder.Services.AddApplication();
+builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddPersistence(builder.Configuration);
 
 builder.Services.AddControllers().AddJsonOptions(options =>
