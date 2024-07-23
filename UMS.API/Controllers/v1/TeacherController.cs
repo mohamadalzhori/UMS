@@ -1,12 +1,13 @@
-﻿using MediatR;
+﻿using Asp.Versioning;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using UMS.Application.Teachers.Commands.CreateTeacher;
 using UMS.Application.Teachers.Queries.GetAllTeachers;
-using UMS.Domain.Shared;
 
-namespace UMS.API.Controllers
+namespace UMS.API.Controllers.v1
 {
     [ApiController]
+    [ApiVersion(1)]
     [Route("Teacher")]
     public class TeacherController(IMediator _mediator) : ControllerBase
     {
