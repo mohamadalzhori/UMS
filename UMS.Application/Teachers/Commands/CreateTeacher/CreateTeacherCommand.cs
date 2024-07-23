@@ -5,6 +5,6 @@ using UMS.Domain.Shared;
 namespace UMS.Application.Teachers.Commands.CreateTeacher
 {
     public record CreateTeacherCommand(
-        Name Name,
-        Email Email) : IRequest<long>;
+        string Name,
+        string Email) : IRequest<long>;
 }

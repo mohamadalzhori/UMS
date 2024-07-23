@@ -1,12 +1,313 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\courses\\queries\\getallcourses\\getallcoursesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\courses\\queries\\getallcourses\\getallcoursesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|solutionrelative:ums.api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.api\\controllers\\classcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|solutionrelative:ums.api\\controllers\\classcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\courses\\commands\\createcourse\\createcourcecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\courses\\commands\\createcourse\\createcourcecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\courses\\commands\\createcourse\\createcoursecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\courses\\commands\\createcourse\\createcoursecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\commands\\createsession\\createsessioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\commands\\createsession\\createsessioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\commands\\createsession\\createsessioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\commands\\createsession\\createsessioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\commands\\enroll\\enrollcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\commands\\enroll\\enrollcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\commands\\enroll\\enrollcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\commands\\enroll\\enrollcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\queries\\getallclasses\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\queries\\getallclasses\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\queries\\getallclasses\\getallclassesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\queries\\getallclasses\\getallclassesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\queries\\getallclasses\\getallclassesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\queries\\getallclasses\\getallclassesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\commands\\registerclass\\registerclasscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\commands\\registerclass\\registerclasscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\classes\\commands\\registerclass\\registerclasscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\classes\\commands\\registerclass\\registerclasscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.api\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|solutionrelative:ums.api\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.application\\teachers\\commands\\createteacher\\createteachercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF267B-92D1-4CAF-B97F-0B387AC41D24}|UMS.Application\\UMS.Application.csproj|solutionrelative:ums.application\\teachers\\commands\\createteacher\\createteachercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|c:\\users\\zhouri\\desktop\\riderprojects\\ums\\ums.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B4C8AB1-1307-4F34-B73F-83127813CD99}|UMS.API\\UMS.API.csproj|solutionrelative:ums.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetAllCoursesQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Courses\\Queries\\GetAllCourses\\GetAllCoursesQuery.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Courses\\Queries\\GetAllCourses\\GetAllCoursesQuery.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Courses\\Queries\\GetAllCourses\\GetAllCoursesQuery.cs",
+              "RelativeToolTip": "UMS.Application\\Courses\\Queries\\GetAllCourses\\GetAllCoursesQuery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T13:04:31.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateCourceCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourceCommandHandler.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourceCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourceCommandHandler.cs",
+              "RelativeToolTip": "UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourceCommandHandler.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T13:02:39.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateSessionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommandHandler.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommandHandler.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommandHandler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T13:01:32.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "UMS.API\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "UMS.API\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:54:43.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateCourseCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourseCommand.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourseCommand.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourseCommand.cs",
+              "RelativeToolTip": "UMS.Application\\Courses\\Commands\\CreateCourse\\CreateCourseCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:55:09.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClassController.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\ClassController.cs",
+              "RelativeDocumentMoniker": "UMS.API\\Controllers\\ClassController.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\ClassController.cs",
+              "RelativeToolTip": "UMS.API\\Controllers\\ClassController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:53:16.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateSessionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommand.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommand.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommand.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Commands\\CreateSession\\CreateSessionCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T13:01:26.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EnrollCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommandHandler.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommandHandler.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommandHandler.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:59:52.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EnrollCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommand.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommand.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommand.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Commands\\Enroll\\EnrollCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:59:49.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetAllClassesQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQuery.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQuery.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQuery.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQuery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:59:22.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClassDto.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Queries\\GetAllClasses\\ClassDto.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Queries\\GetAllClasses\\ClassDto.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Queries\\GetAllClasses\\ClassDto.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Queries\\GetAllClasses\\ClassDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:59:20.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetAllClassesQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQueryHandler.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQueryHandler.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Queries\\GetAllClasses\\GetAllClassesQueryHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:59:25.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterClassCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommandHandler.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommandHandler.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommandHandler.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:58:53.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RegisterClassCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommand.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommand.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommand.cs",
+              "RelativeToolTip": "UMS.Application\\Classes\\Commands\\RegisterClass\\RegisterClassCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:58:49.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateTeacherCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Teachers\\Commands\\CreateTeacher\\CreateTeacherCommand.cs",
+              "RelativeDocumentMoniker": "UMS.Application\\Teachers\\Commands\\CreateTeacher\\CreateTeacherCommand.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.Application\\Teachers\\Commands\\CreateTeacher\\CreateTeacherCommand.cs",
+              "RelativeToolTip": "UMS.Application\\Teachers\\Commands\\CreateTeacher\\CreateTeacherCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:56:48.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "UMS.API\\Controllers\\TeacherController.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\TeacherController.cs",
+              "RelativeToolTip": "UMS.API\\Controllers\\TeacherController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:56:43.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "UMS.API\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\Zhouri\\Desktop\\RiderProjects\\UMS\\UMS.API\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "UMS.API\\Controllers\\StudentController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:56:19.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

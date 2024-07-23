@@ -5,8 +5,8 @@ using UMS.Domain.Shared;
 namespace UMS.Application.Courses.Commands.CreateCourse
 {
     public record CreateCourseCommand(
-        Name Name,
-        MaxStudentNumber MaxStudentNumber,
+        string Name,
+        int MaxStudentNumber,
         DateOnly StartDate,
         DateOnly EndDate) : IRequest<long>;
 }

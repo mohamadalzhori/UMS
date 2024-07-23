@@ -1,4 +1,5 @@
 ﻿using UMS.Domain.Classes;
+using UMS.Domain.Exceptions.Courses;
 using UMS.Domain.Shared;
 
 namespace UMS.Domain.Courses;
@@ -28,7 +29,7 @@ public partial class Course
     public void SetEnrollmentPeriod(DateOnly startDate, DateOnly endDate)
     {
         if (startDate > endDate)
-            throw new ArgumentException("Enrollment end date cannot precede start date.");
+            throw new InvalidClassEnrollmentDate();
 
         EnrollmentStartDate = startDate;
         EnrollmentEndDate = endDate;
