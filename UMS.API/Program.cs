@@ -89,6 +89,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<RequestContextLogging>(); // push correlationId before logging
+
 app.UseSerilogRequestLogging();
 
 app.UseAuthorization();
