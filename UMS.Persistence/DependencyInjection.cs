@@ -14,6 +14,10 @@ namespace UMS.Persistence
                 options.UseNpgsql(
                     configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddHealthChecks()
+                .AddNpgSql(configuration.GetConnectionString("DefaultConnection")!)
+                .AddRedis(configuration.GetConnectionString("Cache")!)
+                .AddUrlGroup(new Uri("http://localhost:5341"), name: "seq", tags: new[] { "services" });        
         
             return services;
         }
