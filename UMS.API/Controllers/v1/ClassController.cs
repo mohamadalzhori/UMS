@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Asp.Versioning;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using UMS.Application.Classes.Commands.Enroll;
 using UMS.Application.Classes.Commands.RegisterClass;
@@ -7,10 +7,11 @@ using UMS.Application.Classes.Queries.GetAllClasses;
 using UMS.Application.Classes.Queries.GetStudentsByClass;
 using UMS.Application.Students.Queries.GetAllStudents;
 
-namespace UMS.API.Controllers
+namespace UMS.API.Controllers.v1
 {
     [ApiController]
-    [Route("Class")]
+    [ApiVersion(1)]
+    [Route("v{version:apiVersion}/Class")]
     public class ClassController(IMediator _mediator) : ControllerBase
     {
         [HttpPost("Register")]
