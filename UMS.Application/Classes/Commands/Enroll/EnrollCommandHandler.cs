@@ -1,10 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UMS.Domain.Exceptions.Classes;
+using UMS.Domain.Exceptions.Students;
 using UMS.Persistence;
 
 namespace UMS.Application.Classes.Commands.Enroll
@@ -15,13 +12,13 @@ namespace UMS.Application.Classes.Commands.Enroll
         {
             var @class = _context.Classes.Include(x => x.Course).FirstOrDefault(x => x.Id == request.ClassId);
 
-            if (@class == null) 
-                throw new NullReferenceException($"Class of id {request.ClassId} not found");
+            if (@class == null)
+                throw new ClassNotFound(request.ClassId);
 
             var student = _context.Students.Find(request.StudentId);
 
             if (student == null)
-                throw new NullReferenceException($"Student of id {request.StudentId} not found");
+                throw new StudentNotFound(request.StudentId);
 
             @class.Enroll(student);
 

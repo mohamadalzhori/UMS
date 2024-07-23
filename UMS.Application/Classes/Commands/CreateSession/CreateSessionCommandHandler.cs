@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using UMS.Domain.Classes;
+using UMS.Domain.Exceptions;
+using UMS.Domain.Exceptions.Classes;
 using UMS.Persistence;
 
 namespace UMS.Application.Classes.Commands.CreateSession
@@ -13,8 +15,8 @@ namespace UMS.Application.Classes.Commands.CreateSession
 
             // TODO: Also check if overlap with other classes taught by the same teacher
 
-            if (@class != null) 
-                throw new NullReferenceException($"Class of Id {request.ClassId} not found");
+            if (@class != null)
+                throw new ClassNotFound(request.ClassId);
 
             var session = @class.AddSession(request.StartTime, request.EndTime);            
 

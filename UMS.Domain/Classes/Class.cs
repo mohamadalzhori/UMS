@@ -1,5 +1,7 @@
 ﻿using System;
 using UMS.Domain.Courses;
+using UMS.Domain.Exceptions;
+using UMS.Domain.Exceptions.Classes;
 using UMS.Domain.Users;
 namespace UMS.Domain.Classes;
 
@@ -23,7 +25,6 @@ public partial class Class
     public long CourseId { get; private set; }
     public virtual Course Course { get; private set; } = null!;
 
-
     // students are enrolled in a class not a course, because a class doesn't have a specific timing
     private readonly List<ClassEnrollment> _classEnrollments = new();
     public virtual IReadOnlyCollection<ClassEnrollment> ClassEnrollments => _classEnrollments.AsReadOnly();
@@ -43,12 +44,12 @@ public partial class Class
     public Session AddSession(TimeOnly startTime, TimeOnly endTime)
     {
         if (endTime < startTime)
-            throw new ArgumentException("End Time must not precede Start Time");
+            throw new InvalidSessionTime();
 
         var overlap = Sessions.Any(s => (startTime >= s.StartTime && startTime <= s.EndTime) || (endTime >= s.StartTime && endTime <= s.EndTime));
 
         if (overlap)
-            throw new ArgumentException("Session overlaps with existing session");
+            throw new SessionOverlap();
 
         var session = Session.Create(startTime, endTime, Id);
 
@@ -60,18 +61,15 @@ public partial class Class
     public void Enroll(Student student)
     {
         if (Course.MaxStudentsNumber is not null && ClassEnrollments.Count >= Course.MaxStudentsNumber.Value)
-            throw new InvalidOperationException("Class is full, try enrolling in a different class");
+            throw new FullClass();
 
-        if ( DateOnly.FromDateTime(DateTime.Now) < Course.EnrollmentStartDate)
-            throw new InvalidOperationException($"Class Registration start on {Course.EnrollmentStartDate}");
- 
-        if ( DateOnly.FromDateTime(DateTime.Now) > Course.EnrollmentEndDate)
-            throw new InvalidOperationException($"Class Registration ended on {Course.EnrollmentEndDate}");
+        if (DateOnly.FromDateTime(DateTime.Now) < Course.EnrollmentStartDate)
+            throw new EarlyClassRegistration(Course.EnrollmentStartDate);
 
+        if (DateOnly.FromDateTime(DateTime.Now) > Course.EnrollmentEndDate)
+            throw new LateClassRegistration(Course.EnrollmentEndDate);
 
         var enrollment = ClassEnrollment.Create(this, student); 
-
-        student.AddClassEnrollment(enrollment);
 
         _classEnrollments.Add(enrollment);
     }

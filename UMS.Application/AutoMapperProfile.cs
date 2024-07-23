@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UMS.API.Controllers.Courses;
 using UMS.Application.Classes.Queries.GetAllClasses;
+using UMS.Application.Students.Queries.GetAllStudents;
 using UMS.Application.Teachers.Queries.GetAllTeachers;
 using UMS.Domain.Classes;
 using UMS.Domain.Courses;
@@ -26,7 +27,12 @@ namespace UMS.Application
                 .ForMember(x => x.Name, dto => dto.MapFrom(x => x.Name.Value))
                 .ForMember(x => x.Email, dto => dto.MapFrom(x => x.Email.Value));
 
+            CreateMap<Student, StudentDto>()
+                .ForMember(x => x.Name, dto => dto.MapFrom(x => x.Name.Value))
+                .ForMember(x => x.Email, dto => dto.MapFrom(x => x.Email.Value));
+
             CreateMap<Class, ClassDto>();
+            
         }
     }
 }
