@@ -17,6 +17,7 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.0-preview.6.24328.4" />
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.2-dev-00341" />
         <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
         <PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0-dev-00310" />
@@ -28,6 +29,32 @@
       <ProjectReference Include="..\UMS.Common\UMS.Common.csproj" />
       <ProjectReference Include="..\UMS.Infrastructure\UMS.Infrastructure.csproj" />
       <ProjectReference Include="..\UMS.Persistence\UMS.Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Controllers\TestController.en-US.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Test.en-US.Designer.cs</LastGenOutput>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Controllers\TestController.fr-FR.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Test.fr-FR.Designer.cs</LastGenOutput>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Controllers\TestController.en-US.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TestController.en-US.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Controllers\TestController.fr-FR.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TestController.fr-FR.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
