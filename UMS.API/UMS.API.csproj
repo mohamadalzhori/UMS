@@ -10,6 +10,8 @@
         <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
         <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
         <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.8.14" />
+        <PackageReference Include="Hangfire.PostgreSql" Version="1.20.9" />
         <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.2.5" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
           <PrivateAssets>all</PrivateAssets>
@@ -24,6 +26,7 @@
     <ItemGroup>
       <ProjectReference Include="..\UMS.Application\UMS.Application.csproj" />
       <ProjectReference Include="..\UMS.Common\UMS.Common.csproj" />
+      <ProjectReference Include="..\UMS.Infrastructure\UMS.Infrastructure.csproj" />
       <ProjectReference Include="..\UMS.Persistence\UMS.Persistence.csproj" />
     </ItemGroup>
 

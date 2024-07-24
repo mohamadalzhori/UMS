@@ -1,5 +1,7 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
+using Hangfire;
+using Hangfire.PostgreSql;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using UMS.Application;
@@ -12,6 +14,7 @@ using Serilog;
 using UMS.API.Middlewares;
 using UMS.Domain.Users;
 using UMS.Persistence;
+using UMS.Infrastructure.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,6 +72,11 @@ builder.Services.AddApiVersioning(opts =>
     opts.SubstituteApiVersionInUrl = true;
 });
 
+builder.Services.AddHangfire(config =>
+    config.UsePostgreSqlStorage(x =>
+        x.UseNpgsqlConnection(builder.Configuration.GetConnectionString("DefaultConnection"))));
+
+builder.Services.AddHangfireServer();
 
 var app = builder.Build();
 
@@ -100,6 +108,10 @@ app.UseAuthorization();
 app.UseExceptionHandler();
 
 app.MapControllers();
+
+app.UseHangfireDashboard("/jobs");
+
+RecurringJob.AddOrUpdate("Daily test message" ,() => EmailSender.Send("2d5edbec5d@emaildbox.pro", "test", "testis"), Cron.Daily(12,0));
 
 app.MapHealthChecks("healthz", new HealthCheckOptions
 {
