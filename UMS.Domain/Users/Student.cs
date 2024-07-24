@@ -8,5 +8,6 @@ namespace UMS.Domain.Users
         private readonly List<ClassEnrollment> _classEnrollments = new();
         public virtual IReadOnlyCollection<ClassEnrollment> ClassEnrollments => _classEnrollments.AsReadOnly();
 
+        public string? PicturePath { get; set; }
     }
 }
