@@ -129,6 +129,9 @@ namespace UMS.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
+                    b.Property<string>("PicturePath")
+                        .HasColumnType("text");
+
                     b.ComplexProperty<Dictionary<string, object>>("Email", "UMS.Domain.Users.Student.Email#Email", b1 =>
                         {
                             b1.IsRequired();

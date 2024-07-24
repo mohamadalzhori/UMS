@@ -30,4 +30,8 @@
       <ProjectReference Include="..\UMS.Persistence\UMS.Persistence.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\Pictures\" />
+    </ItemGroup>
+
 </Project>
