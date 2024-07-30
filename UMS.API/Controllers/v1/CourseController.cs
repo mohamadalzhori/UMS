@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UMS.API.Controllers.Courses;
 using UMS.Application.Classes.Commands.CreateSession;
@@ -10,10 +11,11 @@ namespace UMS.API.Controllers.v1
 {
     [ApiController]
     [ApiVersion(1)]
-    [Route("Course")]
+    [Route("v{version:apiVersion}/Course")]
     public class CourseController(IMediator _mediator) : ControllerBase
     {
 
+        [Authorize(Roles = "admin")]
         [HttpPost("Create")]
         public async Task<long> CreateAsync([FromBody] CreateCourseCommand command)
         {
@@ -31,7 +33,7 @@ namespace UMS.API.Controllers.v1
             return await _mediator.Send(query);
         }
 
-
+        [Authorize(Roles = "admin, teacher")]
         [HttpPost("AddSession")]
         public async Task<long> AddSession([FromBody] CreateSessionCommand command)
         {

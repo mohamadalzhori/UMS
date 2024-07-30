@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UMS.Application.Classes.Commands.Enroll;
 using UMS.Application.Classes.Commands.RegisterClass;
@@ -14,6 +15,7 @@ namespace UMS.API.Controllers.v1
     [Route("v{version:apiVersion}/Class")]
     public class ClassController(IMediator _mediator) : ControllerBase
     {
+        [Authorize(Roles = "admin")]
         [HttpPost("Register")]
         public async Task<long> Register([FromBody] RegisterClassCommand command)
         {
@@ -22,6 +24,7 @@ namespace UMS.API.Controllers.v1
             return classId;
         }
 
+        [Authorize]
         [HttpGet("GetAll")]
         public async Task<List<ClassDto>> GetAllClasses()
         {
@@ -31,6 +34,7 @@ namespace UMS.API.Controllers.v1
         }
 
 
+        [Authorize(Roles = "student")]
         [HttpPost("Enroll")]
         public async Task<IActionResult> Enroll([FromBody] EnrollCommand command)
         {
@@ -39,6 +43,7 @@ namespace UMS.API.Controllers.v1
             return Ok();
         }
 
+        [Authorize(Roles = "admin, teacher")]
         [HttpGet("GetStudents")]
         public async Task<List<StudentDto>> GetStudents([FromQuery] GetStudentsByClassQuery query)
         {

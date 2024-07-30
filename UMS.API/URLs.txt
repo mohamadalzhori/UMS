@@ -1,0 +1,10 @@
+﻿curl -X GET "http://localhost:5000/test/students" -H "Authorization: Bearer YOUR_TOKEN_HERE"
+
+
+
+curl --data "grant_type=password&client_id=umsclient&username=admin1&password=wow&client_secret=Xjk4gUX0Lz8eyrQhPS6tW234tviWCNYf&scope=roles" http://localhost:8080/realms/ums/protocol/openid-connect/token
+
+curl --data "grant_type=password&client_id=umsclient&username=teacher1&password=wow&client_secret=Xjk4gUX0Lz8eyrQhPS6tW234tviWCNYf&scope=roles" http://localhost:8080/realms/ums/protocol/openid-connect/token
+
+
+curl --data "grant_type=password&client_id=umsclient&username=student1&password=wow&client_secret=Xjk4gUX0Lz8eyrQhPS6tW234tviWCNYf&scope=roles" http://localhost:8080/realms/ums/protocol/openid-connect/token
