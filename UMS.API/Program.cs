@@ -1,129 +1,79 @@
-using Asp.Versioning;
-using Asp.Versioning.ApiExplorer;
 using Hangfire;
-using Hangfire.PostgreSql;
-using HealthChecks.UI.Client;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using UMS.Application;
-using UMS.Common.Converters;
-using Microsoft.AspNetCore.OData;
-using Microsoft.OData.Edm;
-using Microsoft.OData.ModelBuilder;
-using Microsoft.OpenApi.Models;
 using Serilog;
+using UMS.API.Configuration;
 using UMS.API.Middlewares;
-using UMS.Domain.Users;
 using UMS.Persistence;
 using UMS.Infrastructure.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Serilog
+builder.UseSerilog();
 
-builder.Host.UseSerilog((context, configuration) => 
-    configuration.ReadFrom.Configuration(context.Configuration));
-
-
+// Application Layer
 builder.Services.AddApplication(builder.Configuration);
+
+// Persistence Layer
 builder.Services.AddPersistence(builder.Configuration);
 
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
-}).AddOData(options =>
-    options.Select().Filter().OrderBy().Expand().Count().AddRouteComponents("odata", GetEdmModel()));
+// Custom Json Serializer for TimeOnly
+builder.Services.AddCustomJsonSerializer();
 
+// Odata
+builder.Services.AddOdata();
+
+// Global Exception Handler
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+// Swagger
+builder.Services.AddSwagger();
 
-builder.Services.AddSwaggerGen();
+// Api Versioning
+builder.Services.ConfigureApiVersioning();
 
-builder.Services.AddSwaggerGen(options =>
-{
-    // Add a Swagger document for each discovered API version
-    var provider =builder.Services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
-    foreach (var description in provider.ApiVersionDescriptions)
-    {
-        options.SwaggerDoc(description.GroupName, new OpenApiInfo()
-        {
-            Title = $"API {description.ApiVersion}",
-            Version = description.ApiVersion.ToString()
-        });
-    }
-});
+// Hangfire
+builder.Services.ConfigureHangfire(builder);
 
-
-builder.Services.AddApiVersioning(opts =>
-{
-    opts.AssumeDefaultVersionWhenUnspecified = true;
-    opts.DefaultApiVersion = new ApiVersion(1);
-    opts.ReportApiVersions = true;
-    opts.ApiVersionReader = ApiVersionReader.Combine(
-        new QueryStringApiVersionReader("api-version"),
-        new HeaderApiVersionReader("api-version"),
-        new UrlSegmentApiVersionReader()
-    );
-}).AddApiExplorer(opts =>
-{
-    opts.GroupNameFormat = "'v'V";
-    opts.SubstituteApiVersionInUrl = true;
-});
-
-builder.Services.AddHangfire(config =>
-    config.UsePostgreSqlStorage(x =>
-        x.UseNpgsqlConnection(builder.Configuration.GetConnectionString("DefaultConnection"))));
-
-builder.Services.AddHangfireServer();
+// Keycloak
+builder.Services.AddKeycloak();
+   
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    // app.UseSwaggerUI();
-    app.UseSwaggerUI(options =>
-    {
-        // Build a swagger endpoint for each discovered API version
-        var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
-        foreach (var description in provider.ApiVersionDescriptions)
-        {
-            options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
-        }
-    });
-    
+    app.ConfigureSwaggerUi();
 }
 
 app.UseHttpsRedirection();
 
-app.UseMiddleware<RequestContextLogging>(); // push correlationId before logging
+// Correlation ID
+app.UseMiddleware<RequestContextLogging>();
 
+// Serilog Request Logging
 app.UseSerilogRequestLogging();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
+// Exception Handling
 app.UseExceptionHandler();
 
 app.MapControllers();
 
+// Hangfire
 app.UseHangfireDashboard("/jobs");
 
-RecurringJob.AddOrUpdate("Daily test message" ,() => EmailSender.Send("2d5edbec5d@emaildbox.pro", "test", "testis"), Cron.Daily(12,0));
 
-app.MapHealthChecks("healthz", new HealthCheckOptions
-{
-    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-});
+// Background Jobs Test
+RecurringJob.AddOrUpdate("Daily test message", () => EmailSender.Send("2d5edbec5d@emaildbox.pro", "test", "testis"),
+    Cron.Daily(12, 0));
+
+// Health Checks
+app.UseHealthChecks();
 
 app.Run();
-
-
-static IEdmModel GetEdmModel()
-{
-    var builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Student>(nameof(Student));
-    return builder.GetEdmModel();
-}

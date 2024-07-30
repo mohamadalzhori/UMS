@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
@@ -11,16 +12,18 @@ namespace UMS.API.Controllers.v1
 {
     [ApiController]
     [ApiVersion(1)]
-    [Route("Student")]
+    [Route("v{version:apiVersion}/Student")]
     public class StudentController(IMediator _mediator, IWebHostEnvironment _env) : ControllerBase
     {
 
+        [Authorize(Roles = "admin")]
         [HttpPost("Create")]
         public async Task<long> Create(CreateStudentCommand command)
         {
             return await _mediator.Send(command);
         }
 
+        [Authorize(Roles = "admin, student")]
         [HttpPost("UploadPicture")]
         public async Task<IActionResult> UploadPicture(long studentId, IFormFile picture)
         {
