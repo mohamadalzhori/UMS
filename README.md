@@ -27,3 +27,6 @@
 - [x] Caching to Redis container
 - [x] Health checks for postgres db, redis and seq, /heathz
 - [x] Background Jobs with Hangfire, /Jobs
+
+- [x] Authentication & Authorization using Keycloak
+- [x] Utilizing Azure Blob Storage to store Profile Pictures, using Azurite container 
