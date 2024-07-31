@@ -38,7 +38,9 @@ builder.Services.ConfigureHangfire(builder);
 
 // Keycloak
 builder.Services.AddKeycloak();
-   
+
+// Azure Storage
+builder.Services.AddAzureStorage(builder);
 
 var app = builder.Build();
 
