@@ -39,8 +39,11 @@ builder.Services.ConfigureHangfire(builder);
 // Keycloak
 builder.Services.AddKeycloak();
 
-// Azure Storage
+// Azure Storage for Download
 builder.Services.AddAzureStorage(builder);
+
+// RabbitMQ
+builder.Services.ConfigureRabbitMq();
 
 var app = builder.Build();
 
@@ -72,8 +75,8 @@ app.UseHangfireDashboard("/jobs");
 
 
 // Background Jobs Test
-RecurringJob.AddOrUpdate("Daily test message", () => EmailSender.Send("2d5edbec5d@emaildbox.pro", "test", "testis"),
-    Cron.Daily(12, 0));
+// RecurringJob.AddOrUpdate("Daily test message", () => EmailSender.Send("2d5edbec5d@emaildbox.pro", "test", "testis"),
+    // Cron.Daily(12, 0));
 
 // Health Checks
 app.UseHealthChecks();

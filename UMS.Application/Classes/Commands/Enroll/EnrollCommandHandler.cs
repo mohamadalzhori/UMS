@@ -6,7 +6,8 @@ using UMS.Persistence;
 
 namespace UMS.Application.Classes.Commands.Enroll
 {
-    internal class EnrollCommandHandler(AppDbContext _context) : IRequestHandler<EnrollCommand>
+    internal class EnrollCommandHandler(AppDbContext _context)
+        : IRequestHandler<EnrollCommand>
     {
         public async Task Handle(EnrollCommand request, CancellationToken cancellationToken)
         {
