@@ -2,18 +2,17 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OData.Query;
-using Microsoft.AspNetCore.OData.Routing.Controllers;
+using UMS.API.AzureStorage;
+using UMS.API.AzureStorage.Dto;
 using UMS.Application.Students.Commands.AddPicture;
 using UMS.Application.Students.Commands.CreateStudent;
-using UMS.Application.Students.Queries.GetAllStudents;
 
 namespace UMS.API.Controllers.v1
 {
     [ApiController]
     [ApiVersion(1)]
     [Route("v{version:apiVersion}/Student")]
-    public class StudentController(IMediator _mediator, IWebHostEnvironment _env) : ControllerBase
+    public class StudentController(IMediator _mediator, IWebHostEnvironment _env, IFileStorageService _fileStorageService) : ControllerBase
     {
 
         [Authorize(Roles = "admin")]
@@ -24,8 +23,8 @@ namespace UMS.API.Controllers.v1
         }
 
         [Authorize(Roles = "admin, student")]
-        [HttpPost("UploadPicture")]
-        public async Task<IActionResult> UploadPicture(long studentId, IFormFile picture)
+        [HttpPost("UploadPictureLocal")]
+        public async Task<IActionResult> UploadPictureLocal(long studentId, IFormFile picture)
         {
             var folder = "Pictures/";
 
@@ -44,5 +43,25 @@ namespace UMS.API.Controllers.v1
 
             return Ok(path);
         }
+        
+        [Authorize(Roles = "admin, student")]
+        [HttpPost("UploadPfpAzure")]
+        public async Task<IActionResult> UploadPfpAzure([FromForm] UploadFileDto request)
+        {
+            if (request.file == null || request.file.Length == 0)
+                return BadRequest("File is empty or not selected");
+
+            var uri = await _fileStorageService.UploadFileAsync(request.file,request.containerName, request.blobName);
+            return Ok(uri);
+        }
+
+        [Authorize(Roles = "admin, student")]
+        [HttpGet("DownloadPfpAzure")]
+        public async Task<IActionResult> DownloadPfpAzure([FromQuery] string containerName, [FromQuery] string blobName)
+        {
+            byte[] fileBytes = await _fileStorageService.DownloadFileAsync(containerName, blobName);
+            return File(fileBytes, "application/octet-stream", blobName);
+        } 
+        
     }
 }
