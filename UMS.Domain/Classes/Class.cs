@@ -33,7 +33,6 @@ public partial class Class
     private readonly List<Session> _sessions = new();
     public virtual IReadOnlyCollection<Session> Sessions => _sessions.AsReadOnly();
 
-
     public static Class Register(long teacherId, long courseId)
     {
         var @class = new Class(0, teacherId, courseId);

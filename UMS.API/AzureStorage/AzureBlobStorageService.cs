@@ -1,6 +1,5 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-
 namespace UMS.API.AzureStorage;
 
 public class AzureBlobStorageService :  IFileStorageService
