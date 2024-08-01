@@ -13,7 +13,7 @@ using UMS.Persistence;
 namespace UMS.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240721132136_initial")]
+    [Migration("20240801034516_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -131,6 +131,9 @@ namespace UMS.Persistence.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("PicturePath")
+                        .HasColumnType("text");
 
                     b.ComplexProperty<Dictionary<string, object>>("Email", "UMS.Domain.Users.Student.Email#Email", b1 =>
                         {

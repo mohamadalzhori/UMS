@@ -34,6 +34,7 @@ namespace UMS.Persistence.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    PicturePath = table.Column<string>(type: "text", nullable: true),
                     Email_Value = table.Column<string>(type: "text", nullable: false),
                     Name_Value = table.Column<string>(type: "text", nullable: false)
                 },
