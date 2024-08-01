@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using UMS.Persistence.Services;
 
 namespace UMS.Persistence
 {
@@ -9,9 +10,13 @@ namespace UMS.Persistence
         public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseNpgsql(
-                    configuration.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<ITenantService, TenantService>(); 
+            services.AddHttpContextAccessor();
+            services.AddDbContext<AppDbContext>(options => { });
+            
+            // services.AddDbContext<AppDbContext>(options =>
+                // options.UseNpgsql(
+                    // configuration.GetConnectionString("DefaultConnection")));
 
             services.AddHealthChecks()
                 .AddNpgSql(configuration.GetConnectionString("DefaultConnection")!)

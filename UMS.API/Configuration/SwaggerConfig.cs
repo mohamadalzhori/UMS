@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning.ApiExplorer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using UMS.API.Filters;
 
 namespace UMS.API.Configuration;
 
@@ -12,6 +13,9 @@ public static class SwaggerConfig
         services.AddSwaggerGen();
         services.AddSwaggerGen(options =>
         {
+            // Add custom header parameter
+            options.OperationFilter<AddTenantHeaderParameter>();
+            
             // Add a Swagger document for each discovered API version
             var provider = services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
             foreach (var description in provider.ApiVersionDescriptions)

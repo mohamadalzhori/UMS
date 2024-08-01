@@ -65,6 +65,9 @@ app.UseSerilogRequestLogging();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Tenant Middleware to get TenantId from Header into context
+app.UseTenantMiddleware();
+
 // Exception Handling
 app.UseExceptionHandler();
 

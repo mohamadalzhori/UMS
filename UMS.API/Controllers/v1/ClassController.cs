@@ -15,7 +15,7 @@ namespace UMS.API.Controllers.v1
     [Route("v{version:apiVersion}/Class")]
     public class ClassController(IMediator _mediator) : ControllerBase
     {
-        [Authorize(Roles = "admin")]
+        // [Authorize(Roles = "admin")]
         [HttpPost("Register")]
         public async Task<long> Register([FromBody] RegisterClassCommand command)
         {
@@ -24,7 +24,7 @@ namespace UMS.API.Controllers.v1
             return classId;
         }
 
-        [Authorize]
+        // [Authorize]
         [HttpGet("GetAll")]
         public async Task<List<ClassDto>> GetAllClasses()
         {
