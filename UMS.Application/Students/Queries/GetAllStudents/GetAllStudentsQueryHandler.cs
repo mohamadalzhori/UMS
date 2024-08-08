@@ -14,7 +14,7 @@ namespace UMS.Application.Students.Queries.GetAllStudents
         {
             var cachedData = await _cache.GetAsync<List<StudentDto>>(CacheKey, cancellationToken);
 
-            if (cachedData is not null)
+            if (cachedData is not null && cachedData.Count() >0)
             {
                 return cachedData;
             }

@@ -25,6 +25,7 @@ consumer.Received += (model, ea) =>
     var uploadMessageDto = JsonSerializer.Deserialize<UploadMessageDto>(message);
 
     if (uploadMessageDto != null) _ = FileStorageService.UploadFileAsync(uploadMessageDto);
+    
 };
 
 channel.BasicConsume(queue: "FileQueue",

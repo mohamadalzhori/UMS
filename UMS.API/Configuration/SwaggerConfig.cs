@@ -13,7 +13,7 @@ public static class SwaggerConfig
         services.AddSwaggerGen();
         services.AddSwaggerGen(options =>
         {
-            // Add custom header parameter
+            // Add custom header parameter, X-Tenant-ID
             options.OperationFilter<AddTenantHeaderParameter>();
             
             // Add a Swagger document for each discovered API version

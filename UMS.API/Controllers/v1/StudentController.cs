@@ -47,7 +47,7 @@ namespace UMS.API.Controllers.v1
             return Ok(path);
         }
 
-        // [Authorize(Roles = "admin, student")]
+        [Authorize(Roles = "admin, student")]
         [HttpPost("UploadPfpAzure")]
         public async Task<IActionResult> UploadPfpAzure([FromForm] UploadFileDto request,
             CancellationToken cancellationToken)
@@ -78,7 +78,7 @@ namespace UMS.API.Controllers.v1
 
         }
 
-        // [Authorize(Roles = "admin, student")]
+        [Authorize(Roles = "admin, student")]
         [HttpGet("DownloadPfpAzure")]
         public async Task<IActionResult> DownloadPfpAzure([FromQuery] string containerName, [FromQuery] string blobName)
         {
